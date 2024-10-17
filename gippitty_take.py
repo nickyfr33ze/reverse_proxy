@@ -70,3 +70,16 @@ def start_proxy(host, port, destination_host, destination_port):
 # Start the reverse proxy
 if __name__ == "__main__":
     start_proxy(HOST, PORT, DEST_HOST, DEST_PORT)
+    """
+    How it works:
+
+	1.	The reverse proxy listens on a defined host and port.
+	2.	When a client connects, it creates a connection to the destination server and forwards data between the client and server in both directions using two threads.
+	3.	The handle_client function manages each client connection, and forward_data forwards the traffic between the client and destination server.
+
+    Usage:
+
+	•	Replace HOST, PORT, DEST_HOST, and DEST_PORT with your desired values.
+	•	HOST and PORT define where the proxy listens for incoming connections.
+	•	DEST_HOST and DEST_PORT define the actual server where the traffic should be forwarded.
+    """
